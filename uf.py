@@ -29,6 +29,10 @@ print(type(data))
 
 
 def fun_bet_customer_update(data):
+    """
+    This function will filter the data for key values equal to 'Core'
+    It returns a list of the filtered data.
+    """
     list1 = []
     for values in data:
         for value in values:
@@ -36,9 +40,30 @@ def fun_bet_customer_update(data):
                 list1.append(values)
     return (list1)
 
+
+def crazy_bet_customer_update(data):
+    """
+    This function will filter the data for key values equal to 'SerieA'
+    It returns a list of the filtered data.
+    """
+    list2 = []
+    for values in data:
+        for value in values:
+            if values[value] == 'SerieA':
+                list2.append(values)
+    return (list2)
+
+
+
 returned_list_fun_bet = fun_bet_customer_update(data)
 fun_bet = open('funbet.json', 'w')
 json.dump(returned_list_fun_bet, fun_bet, indent = 4)
+
+returned_list_crazy_bet = crazy_bet_customer_update(data)
+crazy_bet = open('crazybet.json', 'w')
+json.dump(returned_list_crazy_bet, crazy_bet, indent = 4)
+
+
 
 
 

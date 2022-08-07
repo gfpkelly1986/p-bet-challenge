@@ -1,0 +1,37 @@
+[
+    {
+        "FixtureId": 62602,
+        "Competition": "SerieA",
+        "UpdateType": "Core",
+        "SelectionId": 1,
+        "Probability": 0.5
+    },
+    {
+        "FixtureId": 58246,
+        "Competition": "SerieA",
+        "UpdateType": "PlayerProps",
+        "SelectionId": 77,
+        "Probability": 0.3
+    },
+    {
+        "FixtureId": 20448,
+        "Competition": "SerieA",
+        "UpdateType": "Core",
+        "SelectionId": 65,
+        "Probability": 0.2
+    },
+    {
+        "FixtureId": 58364,
+        "Competition": "SerieA",
+        "UpdateType": "PlayerProps",
+        "SelectionId": 84,
+        "Probability": 0.3
+    },
+    {
+        "FixtureId": 50831,
+        "Competition": "SerieA",
+        "UpdateType": "Core",
+        "SelectionId": 93,
+        "Probability": 1.0
+    }
+]
