@@ -1,5 +1,5 @@
 """
-An application to send customer updates to Google Sheets
+An application to update customer files with correct updates and update Google sheets if needed.
 """
 import gspread
 import json
@@ -23,9 +23,22 @@ print(type(data))
 
 # # data after deserialisation <class 'list'>
 with open('forwarder_updates.json', 'r') as updates:
-   data = json.load(updates)
+    data = json.load(updates)
 
 print(type(data))
+
+
+def fun_bet_customer_update(data):
+    list1 = []
+    for values in data:
+        for value in values:
+            if values[value] == 'Core':
+                list1.append(values)
+    return (list1)
+
+returned_list_fun_bet = fun_bet_customer_update(data)
+fun_bet = open('funbet.json', 'w')
+json.dump(returned_list_fun_bet, fun_bet, indent = 4)
 
 
 
