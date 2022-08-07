@@ -19,13 +19,9 @@ SHEET = GSPREAD_CLIENT.open('Customer Updates')
 # data before deserialisation class = <class '_io.TextIOWrapper'>
 data = open('forwarder_updates.json',)
 
-print(type(data))
-
 # # data after deserialisation <class 'list'>
 with open('forwarder_updates.json', 'r') as updates:
     data = json.load(updates)
-
-print(type(data))
 
 
 def fun_bet_customer_update(data):
@@ -38,7 +34,9 @@ def fun_bet_customer_update(data):
         for value in values:
             if values[value] == 'Core':
                 list1.append(values)
-    return (list1)
+
+    fun_bet = open('funbet.json', 'w')
+    json.dump(list1, fun_bet, indent = 4)
 
 
 def crazy_bet_customer_update(data):
@@ -51,17 +49,29 @@ def crazy_bet_customer_update(data):
         for value in values:
             if values[value] == 'SerieA':
                 list2.append(values)
-    return (list2)
+
+    crazy_bet = open('crazybet.json', 'w')
+    json.dump(list2, crazy_bet, indent = 4)
 
 
+def lucky_bet_customer_update(data):
+    """
+    This function will filter the data for key values > 0.25
+    It returns a list of the filtered data.
+    """
+    list3 = []
+    for values in data:
+        for value in values:
+            if value == 'Probability' and values[value] > 0.25:
+                list3.append(values)
 
-returned_list_fun_bet = fun_bet_customer_update(data)
-fun_bet = open('funbet.json', 'w')
-json.dump(returned_list_fun_bet, fun_bet, indent = 4)
+    lucky_bet = open('luckybet.json', 'w')
+    json.dump(list3, lucky_bet, indent = 4)
+    
+fun_bet_customer_update(data)
+crazy_bet_customer_update(data)
+lucky_bet_customer_update(data)
 
-returned_list_crazy_bet = crazy_bet_customer_update(data)
-crazy_bet = open('crazybet.json', 'w')
-json.dump(returned_list_crazy_bet, crazy_bet, indent = 4)
 
 
 
