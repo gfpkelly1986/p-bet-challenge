@@ -1,6 +1,6 @@
 # p-bet-challenge
 
-## Preperation for Udate Forwarder Challenge:
+## Preperation for Update Forwarder Challenge:
 
 -   Set up a new repository in github for version control.
 -   Create a gitpod workspace
