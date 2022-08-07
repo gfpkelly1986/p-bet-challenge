@@ -1,4 +1,4 @@
-# p-bet-challenge
+# Points-Bet-Assignment
 
 ## Preperation for Update Forwarder Challenge:
 
