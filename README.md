@@ -16,7 +16,7 @@
 -   Set up SCOPE variables for Google Sheets access
 -   Set up a Customer Updates Google Sheet with 3 seperate worksheets for FunBet, CrazyBet and LuckyBet
 
-## Logic for Udate Forwarder Challenge:
+## Logic for Update Forwarder Challenge:
 
 -   A functional approach to completing this challenge:
 
@@ -56,4 +56,3 @@
     10. Update each file with the filtered json
     11. If necessary, send all files to external storage like Google Drive or Google Sheets.
 
-    
