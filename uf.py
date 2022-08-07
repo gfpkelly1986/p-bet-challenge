@@ -25,14 +25,38 @@ with open('forwarder_updates.json', 'r') as updates:
 
 
 class Customer_Update:
+    """
+    A Class that will contain the data needed for its children to silter as needed
+
+    ATTRIBUTES
+    ----------
+    data: The full list of updates from forwarder_updates.json
+    """
     def __init__(self, data):
+        """
+        Constructs the data attribute
+        """
         self.data = data
 
+
 class FunBet(Customer_Update):
+    """
+    A Class to filter FunBet Customer updates
+
+    Inherits from Customer_Update
+    """
     def __init__(self, data):
+        """
+        Creates an instance of the class 
+
+        """
         super().__init__(self, data)
 
     def filter_list(data):
+        """
+        A function to filter a list of data and update funbet.json file
+
+        """
         list1 = []
         for values in data:
             for value in values:
@@ -41,11 +65,25 @@ class FunBet(Customer_Update):
         fun_bet = open('funbet.json', 'w')
         json.dump(list1, fun_bet, indent = 4)
 
+
 class CrazyBet(Customer_Update):
+    """
+    A Class to filter CrazyBet Customer updates
+
+    Inherits from Customer_Update
+    """
     def __init__(self, data):
+        """
+        Creates an instance of the class 
+
+        """
         super().__init__(self, data)
 
     def filter_list(data):
+        """
+        A function to filter a list of data and update crazybet.json file
+
+        """
         list2 = []
         for values in data:
             for value in values:
@@ -56,10 +94,22 @@ class CrazyBet(Customer_Update):
 
 
 class LuckyBet(Customer_Update):
+    """
+    A Class to filter LuckyBet Customer updates
+
+    Inherits from Customer_Update
+
+    """
     def __init__(self, data):
+        """
+        Creates an instance of the class
+        """
         super().__init__(self, data)
 
     def filter_list(data):
+        """
+        A function to filter a list of data and update luckybet.json file
+        """
         list3 = []
         for values in data:
             for value in values:
