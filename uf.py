@@ -41,63 +41,37 @@ class FunBet(Customer_Update):
         fun_bet = open('funbet.json', 'w')
         json.dump(list1, fun_bet, indent = 4)
 
+class CrazyBet(Customer_Update):
+    def __init__(self, data):
+        super().__init__(self, data)
+
+    def filter_list(data):
+        list2 = []
+        for values in data:
+            for value in values:
+                if values[value] == 'SerieA':
+                    list2.append(values)
+        fun_bet = open('crazybet.json', 'w')
+        json.dump(list2, fun_bet, indent = 4)
+
+
+class LuckyBet(Customer_Update):
+    def __init__(self, data):
+        super().__init__(self, data)
+
+    def filter_list(data):
+        list3 = []
+        for values in data:
+            for value in values:
+                if value == 'Probability' and values[value] > 0.25:
+                    list3.append(values)
+        fun_bet = open('luckybet.json', 'w')
+        json.dump(list3, fun_bet, indent = 4)
+
         
-
-# print(FunBet.filter_list(data))
-
-
-
-
-
-
-
-# def fun_bet_customer_update(data):
-#     """
-#     This function will filter the data for key values equal to 'Core'
-#     It returns a list of the filtered data.
-#     """
-#     list1 = []
-#     for values in data:
-#         for value in values:
-#             if values[value] == 'Core':
-#                 list1.append(values)
-
-#     fun_bet = open('funbet.json', 'w')
-#     json.dump(list1, fun_bet, indent = 4)
-
-
-# def crazy_bet_customer_update(data):
-#     """
-#     This function will filter the data for key values equal to 'SerieA'
-#     It returns a list of the filtered data.
-#     """
-#     list2 = []
-#     for values in data:
-#         for value in values:
-#             if values[value] == 'SerieA':
-#                 list2.append(values)
-
-#     crazy_bet = open('crazybet.json', 'w')
-#     json.dump(list2, crazy_bet, indent = 4)
-
-
-# def lucky_bet_customer_update(data):
-#     """
-#     This function will filter the data for key values > 0.25
-#     It returns a list of the filtered data.
-#     """
-#     list3 = []
-#     for values in data:
-#         for value in values:
-#             if value == 'Probability' and values[value] > 0.25:
-#                 list3.append(values)
-
-#     lucky_bet = open('luckybet.json', 'w')
-#     json.dump(list3, lucky_bet, indent = 4)
-    
-# fun_bet_customer_update(data)
-# crazy_bet_customer_update(data)
-# lucky_bet_customer_update(data)
+FunBet.filter_list(data)
+CrazyBet.filter_list(data)
+LuckyBet.filter_list(data)
 
 
 
