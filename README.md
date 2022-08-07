@@ -56,3 +56,13 @@
     10. Update each file with the filtered json
     11. If necessary, send all files to external storage like Google Drive or Google Sheets.
 
+# Notes on completion of challenge
+
+-   Due to lack of experience with OOP I decided to attempt the challenge as a functional program and refactor it to an OOP style program.
+-   I was unsure if the files were to be sent to Google Sheets or the correct values assessed from GitHub so I have left the code there for updating them. 
+    If it is not a requirement I might still carry out updating a sheet with these values as an exercise at a later date.
+-   Some of my incorrect initial logic with how the Customer_Update class should be created was discovered while testing in the terminal as I created the Class.
+
+# A Word of Thanks
+
+-   Thank you very much for the opportunity to get this far. I enjoyed the assignment and hope to speak with you soon. :)

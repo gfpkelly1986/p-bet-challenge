@@ -122,10 +122,3 @@ class LuckyBet(Customer_Update):
 FunBet.filter_list(data)
 CrazyBet.filter_list(data)
 LuckyBet.filter_list(data)
-
-
-
-
-
-
-
