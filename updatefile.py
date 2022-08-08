@@ -89,8 +89,8 @@ class CrazyBet(Customer_Update):
             for value in values:
                 if values[value] == 'SerieA':
                     list2.append(values)
-        fun_bet = open('crazybet.json', 'w')
-        json.dump(list2, fun_bet, indent = 4)
+        crazy_bet = open('crazybet.json', 'w')
+        json.dump(list2, crazy_bet, indent = 4)
 
 
 class LuckyBet(Customer_Update):
@@ -113,12 +113,18 @@ class LuckyBet(Customer_Update):
         list3 = []
         for values in data:
             for value in values:
-                if value == 'Probability' and values[value] > 0.25:
-                    list3.append(values)
-        fun_bet = open('luckybet.json', 'w')
-        json.dump(list3, fun_bet, indent = 4)
+                if value == 'Competition' and values[value] != 'PremierLeague':
+                        list3.append(values)
+        for values in list3:
+            for value in values:
+                if value == 'Probability' and values[value] < 0.25:
+                    list3.remove(values)
 
-        
+        lucky_bet = open('luckybet.json', 'w')
+        json.dump(list3, lucky_bet, indent = 4)
+
+
 FunBet.filter_list(data)
 CrazyBet.filter_list(data)
 LuckyBet.filter_list(data)
+
