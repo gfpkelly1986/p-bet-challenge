@@ -63,6 +63,8 @@
     If it is not a requirement I might still carry out updating a sheet with these values as an exercise at a later date.
 -   Some of my incorrect initial logic with how the Customer_Update class should be created was discovered while testing in the terminal as I created the Class.
 
+-   An error I made in filtering out PremierLeague along with the probability < 0.25 was fixed today 8-8-2022. When laying out the original logic I missed the 2nd filter value of 'PremierLeague'. When revising my work I realised my error and commited a change to update the LuckyBet filter_list method to account for this value also.  
+
 # A Word of Thanks
 
 -   Thank you very much for the opportunity to get this far. I enjoyed the assignment and hope to speak with you soon. :)
